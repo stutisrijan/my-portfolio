@@ -1,38 +1,71 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Scroll animation */
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.animate-scroll {
+  display: inline-block;
+  animation: scroll 10s linear infinite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Custom Styling for Skill Boxes */
+.skill-box {
+  border-radius: 8px; /* Optional rounded corners */
+  transition: transform 0.3s ease-in-out;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Hover effect to rotate skill boxes */
+.skill-box:hover {
+  transform: rotate(360deg); /* Rotates the box when hovered */
+}
+
+/* Container for rotating skills circle */
+.rotating-skills-container {
+  position: relative;
+  width: 300px;  /* Adjust size of the boundary circle */
+  height: 300px; /* Adjust size of the boundary circle */
+  border: 5px solid purple; /* Purple boundary circle */
+  border-radius: 50%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  position: relative; /* To position skill icons inside */
+  overflow: hidden; /* To prevent icons from overflowing */
 }
 
-.App-link {
-  color: #61dafb;
+/* Rotating skills inside the circle */
+.rotating-skills {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center center;
+  animation: rotate 10s linear infinite; /* Rotate the whole container */
 }
 
-@keyframes App-logo-spin {
-  from {
+/* Each skill icon inside the circle */
+.skill-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center center;
+  transition: all 0.5s ease;
+  font-size: 2rem; /* Adjust icon size */
+  color: purple;  /* Set icon color */
+  transform: translate(-50%, -50%); /* Center the icons */
+}
+
+/* Animation for the rotating circle */
+@keyframes rotate {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
