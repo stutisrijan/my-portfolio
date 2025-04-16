@@ -1,24 +1,48 @@
 import React, { useState } from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaMoon, FaSun, FaDownload } from "react-icons/fa";
+import {
+  FaLinkedin,
+  FaGithub,
+  FaEnvelope,
+  FaMoon,
+  FaSun,
+  FaDownload,
+} from "react-icons/fa";
 
 const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
-
   const toggleDark = () => setDarkMode(!darkMode);
 
   return (
-    <div className={`${darkMode ? "bg-black text-white" : "bg-white text-black"} min-h-screen flex flex-col md:flex-row transition-colors duration-300`}>
+    <div
+      className={`${
+        darkMode ? "bg-black text-white" : "bg-white text-black"
+      } min-h-screen flex flex-col md:flex-row transition-colors duration-300`}
+    >
       <div className="md:w-1/2 flex flex-col items-center justify-center p-8 space-y-4">
-        <img src="/my-portfolio/pic.jpeg" alt="Stuti Srijan" className="rounded-full w-40 h-40 object-cover border-4 border-green-500" />
+        <img
+          src="/profile.jpeg"
+          alt="Stuti Srijan"
+          className="rounded-full w-40 h-40 object-cover border-4 border-green-500"
+        />
         <h1 className="text-3xl font-bold">Stuti Srijan</h1>
-        <p className="text-center">Web Developer, Gen AI Enthusiast, Game Developer</p>
+        <p className="text-center">
+          Web Developer, Gen AI Enthusiast, Game Developer
+        </p>
         <p className="text-sm">stutisrijanin@gmail.com</p>
         <p className="text-sm">Noida, India</p>
         <div className="flex space-x-4 text-2xl">
-          <a href="https://www.linkedin.com/in/stutisrijan/" target="_blank" rel="noreferrer">
+          <a
+            href="https://www.linkedin.com/in/stutisrijan/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaLinkedin />
           </a>
-          <a href="https://github.com/stutisrijan" target="_blank" rel="noreferrer">
+          <a
+            href="https://github.com/stutisrijan"
+            target="_blank"
+            rel="noreferrer"
+          >
             <FaGithub />
           </a>
           <a href="mailto:stutisrijanin@gmail.com">
@@ -31,10 +55,7 @@ const Home = () => {
         >
           Contact Me
         </a>
-        <button
-          onClick={toggleDark}
-          className="text-xl mt-4"
-        >
+        <button onClick={toggleDark} className="text-xl mt-4">
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
       </div>
@@ -45,11 +66,13 @@ const Home = () => {
           I'm <span className="text-green-500 font-bold">Stuti Srijan</span>,
         </h3>
         <p className="mb-6">
-          I'm currently in my 3rd year of an Integrated M.Tech CSE degree at Jaypee Institute of Information Technology. 
-          I love building cool stuff with web technologies, exploring generative AI, and designing games that spark minds!
+          I'm currently in my 3rd year of an Integrated M.Tech CSE degree at
+          Jaypee Institute of Information Technology. I love building cool stuff
+          with web technologies, exploring generative AI, and designing games
+          that spark minds!
         </p>
         <a
-          href="/my-portfolio/Stuti_Srijan_CV.pdf"
+          href="/Stuti_Srijan_CV.pdf"
           download
           className="bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-bold inline-flex items-center space-x-2"
         >

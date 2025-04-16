@@ -33,9 +33,11 @@ function App() {
       <div className={`${themeBg} min-h-screen`}>
         {/* Header */}
         <header className="p-4 flex justify-between items-center border-b border-purple-300">
-          <marquee className="text-2xl font-bold text-purple-500" scrollAmount="6">
-            Stuti Srijan
-          </marquee>
+          <div className="overflow-hidden whitespace-nowrap w-1/2">
+            <div className="animate-scroll text-2xl font-bold text-purple-500 inline-block">
+              Stuti Srijan
+            </div>
+          </div>
           <button onClick={toggleDarkMode} className="text-purple-500 text-2xl">
             {darkMode ? <FaSun /> : <FaMoon />}
           </button>
@@ -99,7 +101,7 @@ function App() {
             </div>
           </section>
 
-          {/* About Section with rotating skill icons */}
+          {/* About Section */}
           <section id="about" className="py-16 flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
             <div className="md:w-1/2 p-4">
               <h2 className="text-4xl font-bold mb-8 text-purple-500">About Me</h2>
