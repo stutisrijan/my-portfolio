@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import userImage from "../../public/pic.png";
 import {
   FaLinkedin,
   FaGithub,
@@ -19,36 +20,10 @@ const Home = () => {
       } min-h-screen flex flex-col md:flex-row transition-colors duration-300`}
     >
       <div className="md:w-1/2 flex flex-col items-center justify-center p-8 space-y-4">
-        <img
-          src="/profile.jpeg"
-          alt="Stuti Srijan"
-          className="rounded-full w-40 h-40 object-cover border-4 border-green-500"
-        />
-        <h1 className="text-3xl font-bold">Stuti Srijan</h1>
-        <p className="text-center">
-          Web Developer, Gen AI Enthusiast, Game Developer
-        </p>
-        <p className="text-sm">stutisrijanin@gmail.com</p>
-        <p className="text-sm">Noida, India</p>
-        <div className="flex space-x-4 text-2xl">
-          <a
-            href="https://www.linkedin.com/in/stutisrijan/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-          <a
-            href="https://github.com/stutisrijan"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaGithub />
-          </a>
-          <a href="mailto:stutisrijanin@gmail.com">
-            <FaEnvelope />
-          </a>
-        </div>
+      <img
+        src={userImage}
+        alt="Stuti Srijan"
+        className="rounded-full w-40 h-40 object-cover border-4 border-green-500" />
         <a
           href="mailto:stutisrijanin@gmail.com"
           className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded-lg flex items-center"

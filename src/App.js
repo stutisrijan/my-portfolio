@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import userImage from "./pic.png";
 import {
   FaUser,
   FaGraduationCap,
@@ -21,6 +22,8 @@ function App() {
 
   const themeBg = darkMode ? "bg-black text-white" : "bg-white text-black";
   const buttonBg = darkMode ? "bg-purple-600" : "bg-purple-500";
+  const pdfname = "Stuti_Srijan_CV.pdf";
+  const pdfPath = `${process.env.PUBLIC_URL}/${pdfname}`; // Adjust the path as necessary
 
   const skills = [
     <FaReact className="text-blue-500 w-12 h-12" />,
@@ -61,7 +64,7 @@ function App() {
           <section id="home" className="py-16 flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
             <div className="flex flex-col items-center md:w-1/2 space-y-4">
               <img
-                src="/pic.jpeg"
+                src={userImage}
                 alt="Stuti Srijan"
                 className="rounded-full w-40 h-40 object-cover border-4 border-purple-500"
               />
@@ -92,8 +95,8 @@ function App() {
                 I love building cool stuff with web technologies, exploring generative AI, and designing games that spark minds!
               </p>
               <a
-                href="/StutiSrijanCV.pdf"
-                download
+                href={pdfPath}
+                download={pdfname}
                 className={`${buttonBg} hover:bg-purple-600 text-white px-6 py-3 rounded-lg font-bold`}
               >
                 Download CV
