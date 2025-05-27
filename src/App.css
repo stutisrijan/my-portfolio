@@ -1,71 +1,88 @@
-/* App.css */
+/* Add your styles here. Tailwind is loaded via CDN but add custom styles below */
 
-/* Scroll animation */
-@keyframes scroll {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-100%); }
-}
-
-.animate-scroll {
-  display: inline-block;
-  animation: scroll 10s linear infinite;
-}
-
-/* Custom Styling for Skill Boxes */
-.skill-box {
-  border-radius: 8px; /* Optional rounded corners */
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Hover effect to rotate skill boxes */
-.skill-box:hover {
-  transform: rotate(360deg); /* Rotates the box when hovered */
-}
-
-/* Container for rotating skills circle */
 .rotating-skills-container {
+  width: 300px;
+  height: 300px;
   position: relative;
-  width: 300px;  /* Adjust size of the boundary circle */
-  height: 300px; /* Adjust size of the boundary circle */
-  border: 5px solid purple; /* Purple boundary circle */
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative; /* To position skill icons inside */
-  overflow: hidden; /* To prevent icons from overflowing */
+  margin: auto;
 }
 
-/* Rotating skills inside the circle */
 .rotating-skills {
-  position: absolute;
+  animation: rotate 15s linear infinite;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform-origin: center center;
-  animation: rotate 10s linear infinite; /* Rotate the whole container */
+  position: relative;
 }
 
-/* Each skill icon inside the circle */
 .skill-icon {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: center center;
-  transition: all 0.5s ease;
-  font-size: 2rem; /* Adjust icon size */
-  color: purple;  /* Set icon color */
-  transform: translate(-50%, -50%); /* Center the icons */
+  transform-origin: center;
+  font-size: 3rem; /* 48px */
+  color: #7c3aed; /* purple-600 */
 }
 
-/* Animation for the rotating circle */
 @keyframes rotate {
-  0% {
+  from {
     transform: rotate(0deg);
   }
-  100% {
+  to {
     transform: rotate(360deg);
   }
+}
+:root {
+  /* Light theme colors */
+  --bg-color: #f9f9ff;
+  --text-color: #222;
+  --accent-color: #6a0dad; /* purple */
+  --box-bg: #fff;
+  --box-shadow: rgba(106, 13, 173, 0.3);
+}
+
+body.dark {
+  /* Dark theme colors */
+  --bg-color: #121212;
+  --text-color: #eee;
+  --accent-color: #b37feb; /* lighter purple */
+  --box-bg: #1c1c1c;
+  --box-shadow: rgba(179, 127, 235, 0.6);
+}
+
+/* Education section */
+#education {
+  background-color: var(--box-bg);
+  padding: 30px 20px;
+  border-radius: 10px;
+  max-width: 650px;
+  margin: 30px auto;
+  box-shadow: 0 6px 15px var(--box-shadow);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  border-left: 6px solid var(--accent-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#education h2 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  letter-spacing: 1.2px;
+}
+
+.education-item {
+  margin-bottom: 22px;
+}
+
+.education-item h3 {
+  color: var(--accent-color);
+  margin-bottom: 6px;
+  font-size: 1.3rem;
+}
+
+.education-item p {
+  color: var(--text-color);
+  font-size: 1.05rem;
+  margin: 0;
 }
